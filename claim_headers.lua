@@ -1,7 +1,8 @@
 -- Maps claim keys to request headers
 return {
-  ["aid"] = "X-Consumer-AID",
-  ["uid"] = "X-Consumer-Token-User-Id",
-  ["sub"] = "X-Consumer-Token-User-Email",
-  ["aud"] = "X-Consumer-Token-Scopes"
+  ["$.drupal.uid"] = "X-Consumer-Token-User-Id",
+  ["$.sub"] = "X-Consumer-Token-User-Uuid",
+  ["$.iss"] = "X-Consumer-Token-Issuer"
+  ["$.drupal.roles"] = "X-Consumer-Token-User-Roles",
+  ["$.drupal.email"] = "X-Consumer-Token-User-Email",
 }

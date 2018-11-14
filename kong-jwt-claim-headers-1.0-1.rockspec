@@ -1,7 +1,7 @@
 package = "kong-jwt-claim-headers"
 version = "1.0-1"
 source = {
-  url = "git://github.com/wego/kong-jwt-claim-headers",
+  url = "git://github.com/scmp/kong-jwt-claim-headers",
   tag = "v1.0.0"
 }
 description = {
@@ -11,7 +11,8 @@ description = {
 }
 dependencies = {
   "lua ~> 5.1",
-  "kong >= 0.10"
+  "kong >= 0.10",
+  "jsonpath >= 1.0"
 }
 build = {
   type = "builtin",
