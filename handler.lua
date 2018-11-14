@@ -55,7 +55,7 @@ function JwtClaimHeadersHandler:access(conf)
   for json_path, request_header in pairs(CLAIM_HEADERS) do
     local claim_value = jp.query(claims, json_path)
     if claim_value ~= nil then
-      ngx_set_header(request_header, tostring(claim_value)
+      ngx_set_header(request_header, tostring(claim_value))
     end
   end
 end
