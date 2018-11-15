@@ -1,7 +1,7 @@
 package = "kong-jwt-claim-headers"
 version = "1.0-1"
 source = {
-  url = "https://github.com/scmp/kong-jwt-claim-headers.git",
+  url = "git://github.com/scmp/kong-jwt-claim-headers",
   tag = "v1.0.1"
 }
 description = {
