@@ -49,13 +49,16 @@ function JwtClaimHeadersHandler:access(conf)
   JwtClaimHeadersHandler.super.access(self)
 
   local token, _ = retrieve_token(ngx.req, conf)
-  local jwt, _ = jwt_decoder:new(token)
-  local claims = jwt.claims
+  -- Do nothing if no token
+  if token ~= nil then
+    local jwt, _ = jwt_decoder:new(token)
+    local claims = jwt.claims
 
-  for json_path, request_header in pairs(CLAIM_HEADERS) do
-    local claim_value = jp.value(claims, json_path)
-    if claim_value ~= nil then
-      ngx_set_header(request_header, claim_value)
+    for json_path, request_header in pairs(CLAIM_HEADERS) do
+      local claim_value = jp.value(claims, json_path)
+      if claim_value ~= nil then
+        ngx_set_header(request_header, claim_value)
+      end
     end
   end
 end
